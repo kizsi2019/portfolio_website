@@ -1,8 +1,9 @@
 import streamlit as st
 import google.generativeai as genai
 
-api_key = st.secrets["GOOGLE_API_KEY"]
-# api_key =""
+
+#api_key = st.secrets["GOOGLE_API_KEY"]
+api_key ="AIzaSyADGtGn21QQclvyBzcEeVKzbVnjM1ZGnTs"
 genai.configure(api_key=api_key)
 model = genai.GenerativeModel('gemini-1.5-flash')
 
@@ -10,39 +11,39 @@ col1, col2 = st.columns(2)
 
 with col1:
     st.subheader("Hi :wave:")
-    st.title("I am Murtaza Hassan")
+    st.title("I am Zsigmond Kiss")
 
 with col2:
-    st.image("images/murtaza.png")
+    st.image("images/zsigmond.jpg")
 
 st.title(" ")
 
 persona = """
-        You are Murtaza AI bot. You help people answer questions about your self (i.e Murtaza)
+        You are Zsigmond AI bot. You help people answer questions about your self (i.e Murtaza)
         Answer as if you are responding . dont answer in second or third person.
         If you don't know they answer you simply say "That's a secret"
-        Here is more info about Murtaza: 
+        Here is more info about Zsigmond: 
 
-        Murtaza Hassan is an Educator/Youtuber/Entrepreneur in the field of Computer Vision and Robotics.
-        He runs one of the largest YouTube channels in the field of Computer Vision,
-        educating over 3 Million developers,
-        hobbyists and students. Murtaza obtained his Bachelor’s degree in
-        Mechatronics and later specialized in the field of Robotics from
-        Bristol University (UK). He is also a serial entrepreneur having launched several
-        successful ventures including CVZone, which is a one stop solution for learning 
-        and building vision projects. Prior to starting his entrepreneurial career, 
-        Murtaza worked as a university lecturer and a design engineer, evaluating 
-        and developing rapid prototypes of US patents.
+        Zsigmond Kiss Zsigmond Kiss is an innovator and programming instructor in Hungary. 
+        He has his own family business: KissFilm-Studio Ltd. 
+        He is a member of the Artificial Intelligence Coalition, the Edtech Coalition 
+        and the Drone Coalition in Hungary. 
+        He develops courses in Artificial Intelligence and drone programming. 
+        His role model is Murtaza Hassan.
+        His wife is a consultant: Plan B Immigrations is a Hungarian Immigration Law firm 
+        that offers the following services to non-EU citizens:
+        1. "Golden Visa": Hungarian Guest Investor Permanent Residence Permit
+        2. Work permits
+        3. Student Visas
 
-        Murtaza's Youtube Channel: https://www.youtube.com/channel/UCYUjYU5FveRAscQ8V21w81A
-        Murtaza's Email: contact@murtazahassan.com 
-        Murtaza's Facebook: https://www.facebook.com/murtazasworkshop
-        Murtaza's Instagram: https://www.instagram.com/murtazasworkshop/
-        Murtaza's Linkdin: https://www.linkedin.com/in/murtaza-hassan-8045b38a/
-        Murtaza's Github :https://github.com/murtazahassan
+        Zsigmond's Youtube Channel: https://www.youtube.com/c/KissFilmSt%C3%BAdi%C3%B3/featured
+        Zsigmond's Email: zsigmond.kiss@gmail.com 
+        Zsigmond's Facebook: https://www.facebook.com/profile.php?id=100063712953645
+        Zsigmond's wife immigrations Facebook: https://www.facebook.com/profile.php?id=61562597890053
         """
+        
 
-st.title("Murtaza's AI Bot")
+st.title("Zsigmond's AI Bot")
 
 user_question = st.text_input("Ask anything about me")
 if st.button("ASK", use_container_width=400):
@@ -51,29 +52,32 @@ if st.button("ASK", use_container_width=400):
     st.write(response.text)
 
 st.title(" ")
+st.subheader("Youtube Channel")
+st.page_link("https://www.youtube.com/c/KissFilmSt%C3%BAdi%C3%B3/featured",
+                 label="My family business is the youtube channel of KissFilm Studio Ltd.")
 
 col1, col2 = st.columns(2)
 with col1:
-    st.subheader("Youtube Channel")
-    st.write("- Largest Computer Vision Channel")
-    st.write("- 400k+ Subscribers")
-    st.write("- Over 150 Free Tutorials")
-    st.write("- 15 Million+ Views")
-    st.write("- 1.5 Million Hours+ Watch time")
+    st.subheader("Our Facebook Channels")
+
+    st.page_link("https://www.facebook.com/profile.php?id=100063712953645",
+                 label="Learning programming playfully facebook page")
+
 
 with col2:
-    st.video("https://youtu.be/BFlRmIvqwSA?si=a6qL3krtRgqVIKOZ")
+    st.title(" ")
+    st.page_link("https://www.facebook.com/profile.php?id=61562597890053", label="Plan B Immigrations - New Life in Europe ")
 
-st.title(" ")
 
-st.title("My Setup")
-st.image("images/setup.jpg")
+
+
+
 
 st.write(" ")
 st.title("My Skills")
 st.slider("Programming", 0, 100, 70)
-st.slider("Teaching", 0, 100, 85)
-st.slider("Robotics", 0, 100, 75)
+st.slider("Teaching", 0, 100, 95)
+st.slider("Robotics", 0, 100, 70)
 
 st.write(" ")
 st.title("Gallery")
@@ -98,4 +102,4 @@ with col3:
 st.subheader(" ")
 st.write("CONTACT")
 st.title("For any inquiries, email at:")
-st.subheader("contact@murtazahassan.com")
+st.subheader("zsigmond.kiss@gmail.com")
